@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $posts = Post::with(['user', 'category'])->orderBy('id', 'DESC')->paginate(20);
+        return view('frontend.index', ['posts' => $posts]);
     }
 
     public function create()
@@ -21,9 +23,10 @@ class PostController extends Controller
         # code...
     }
 
-    public function show($id)
+    public function show(Post $post)
     {
-        return view('frontend.show');
+        dd($post);
+        return view('frontend.show', ['post' => $post]);
     }
 
     public function edit($id)

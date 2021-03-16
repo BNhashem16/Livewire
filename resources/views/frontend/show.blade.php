@@ -1,4 +1,2 @@
-@extends('layouts.app')
-@section('content')
 
-@endsection
+@livewire('show-posts', ['post' => $post])

@@ -1,5 +1,3 @@
-@extends('layouts.app')
-@section('content')
 <div class="card">
     <div class="table-responsive">
         <table class="table">
@@ -19,8 +17,8 @@
                         <td>{{ $post->user->name }}</td>
                         <td>{{ $post->category->name }}</td>
                         <td>
-                            <a href="{{ route('posts.edit' , $post->id) }}">Edit</a>
-                            <a href="javascript::void(0)" class="btn btn-danger" onclick="" >Delete</a>
+                            {{-- <a href="{{ route('posts.edit' , $post->id) }}">Edit</a> --}}
+                            {{-- <a href="javascript::void(0)" class="btn btn-danger" onclick="" >Delete</a> --}}
 
                         </td>
 
@@ -36,4 +34,3 @@
 
     </div>
 </div>
-@endsection

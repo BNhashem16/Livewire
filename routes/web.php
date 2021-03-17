@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\PostController;
-use App\Http\Livewire\Posts\Index;
+use App\Http\Livewire\Counter;
+use App\Http\Livewire\Create;
+use App\Http\Livewire\Delete;
+use App\Http\Livewire\Index;
 use App\Http\Livewire\Posts\PostCreate;
+use App\Http\Livewire\Show;
 use App\Http\Livewire\ShowPosts;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +29,3 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::resource('posts', PostController::class);
-Route::get('posts/create', PostCreate::class);
-Route::get('posts/{post}', ShowPosts::class);
-Route::get('posts', Index::class);
-
